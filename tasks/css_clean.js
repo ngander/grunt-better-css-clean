@@ -8,38 +8,34 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    // Please see the Grunt documentation for more information regarding task
+    // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('css_clean', 'Remove duplicated css according to application priority', function() {
+    grunt.registerMultiTask('css_clean', 'Remove duplicated css according to application priority', function () {
+        var CleanCSS = require('clean-css');
 
-    var CleanCSS = require('clean-css');
+        // Iterate over all specified file groups.
+        this.files.forEach(function (file) {
+            // Concat specified files.
+            file.src.forEach(function (srcpath) {
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      console.log(f.toString());
+                if (!grunt.file.exists(srcpath)) {
+                    grunt.log.warn('Source file "' + srcpath + '" not found.');
+                }
+                else {
+                    var cleanCssOptions = grunt.config.data.css_clean.options || {};
 
-      f.src.forEach(function(srcpath) {
+                    var cleanCss = new CleanCSS(cleanCssOptions);
+                    var fileContents = grunt.file.read(srcpath);
 
-        if (!grunt.file.exists(srcpath)) {
+                    var result = cleanCss.minify(fileContents);
 
-          grunt.log.warn('Source file "' + srcpath + '" not found.');
-
-        } else {
-
-          var minifiedContent = new CleanCSS().minify(grunt.file.read(srcpath)).styles;
-          grunt.file.write(f.dest, minifiedContent);
-          grunt.log.writeln('File "' + f.dest + '" created.');
-
-        }
-
-      });
-      
+                    grunt.file.write(file.dest, result.styles);
+                    grunt.verbose.writeln('File "' + file.dest + '" created.');
+                }
+            });
+        });
     });
-    
-  });
-
 };

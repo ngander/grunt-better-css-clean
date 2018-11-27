@@ -35,6 +35,14 @@ grunt.initConfig({
 });
 ```
 
+-----
+
+### Debugging
+
+The --verbose parameter outputs additional debug information.
+
+-----
+
 ### Options
 
 #### options.separator
@@ -74,6 +82,7 @@ grunt.initConfig({
     options: {
       separator: ': ',
       punctuation: ' !!!',
+      //all other options that can be used with jakubpawlowicz/clean-css
     },
     files: {
       'dest/default_options': ['src/testing', 'src/123'],

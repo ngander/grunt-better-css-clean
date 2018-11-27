@@ -1,23 +1,23 @@
 {
-  "name": "grunt-css-clean",
+  "name": "grunt-better-css-clean",
   "description": "Remove duplicated css according to application priority",
   "version": "1.0",
-  "homepage": "https://github.com/ilijian/grunt-css-clean",
+  "homepage": "https://github.com/ilijian/grunt-better-css-clean",
   "author": {
     "name": "lijian",
     "email": "lijian@oneplus.cn"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ilijian/grunt-css-clean.git"
+    "url": "git://github.com/ilijian/grunt-better-css-clean.git"
   },
   "bugs": {
-    "url": "https://github.com/ilijian/grunt-css-clean/issues"
+    "url": "https://github.com/ilijian/grunt-better-css-clean/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ilijian/grunt-css-clean/blob/master/LICENSE-MIT"
+      "url": "https://github.com/ilijian/grunt-better-css-clean/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {

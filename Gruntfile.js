@@ -1,9 +1,6 @@
 /*
- * grunt-css-clean
- * https://github.com/ilijian/grunt-css-clean
- *
- * Copyright (c) 2015 lijian
- * Licensed under the MIT license.
+ * grunt-better-css-clean
+ * https://github.com/opctim/grunt-better-css-clean
  */
 
 'use strict';

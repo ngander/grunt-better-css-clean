@@ -20,7 +20,6 @@ module.exports = function (grunt) {
         this.files.forEach(function (file) {
             // Concat specified files.
             file.src.forEach(function (srcpath) {
-
                 if (!grunt.file.exists(srcpath)) {
                     grunt.log.warn('Source file "' + srcpath + '" not found.');
                 }

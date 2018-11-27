@@ -1,7 +1,7 @@
 {
   "name": "grunt-better-css-clean",
   "description": "Remove duplicated css according to application priority",
-  "version": "1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/ilijian/grunt-better-css-clean",
   "author": {
     "name": "lijian",
